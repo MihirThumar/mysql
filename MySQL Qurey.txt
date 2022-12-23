@@ -1,0 +1,11 @@
+Creating Database :
+
+- CREATE DATABASE employee;
+- USE employee;
+
+Creating Table :
+
+- CREATE TABLE hobby (id INT PRIMARY KEY,hobby VARCHAR(255));
+- CREATE TABLE employee (id INT PRIMARY KEY, first_name VARCHAR(255), last_name VARCHAR(255), age INT, mobile_number INT, address VARCHAR(255));
+- CREATE TABLE employee_salary (id INT, fk_employee_id INT, salary INT, date DATE, FOREIGN KEY (fk_employee_id) REFERENCES employee(id));
+- CREATE TABLE employee_hobby (id INT, fk_employee_id INT, fk_hobby_id Int, FOREIGN KEY (fk_employee_id) REFERENCES employee(id), FOREIGN KEY (fk_hobby_id) REFERENCES hobby(id));
