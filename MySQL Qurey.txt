@@ -6,9 +6,9 @@ Creating Database :
 Creating Table :
 
 - CREATE TABLE hobby (id INT PRIMARY KEY,hobby VARCHAR(255));
-- CREATE TABLE employee (id INT PRIMARY KEY, first_name VARCHAR(255), last_name VARCHAR(255), age INT, mobile_number INT, address VARCHAR(255));
-- CREATE TABLE employee_salary (id INT, fk_employee_id INT, salary INT, date DATE, FOREIGN KEY (fk_employee_id) REFERENCES employee(id));
-- CREATE TABLE employee_hobby (id INT, fk_employee_id INT, fk_hobby_id Int, FOREIGN KEY (fk_employee_id) REFERENCES employee(id), FOREIGN KEY (fk_hobby_id) REFERENCES hobby(id));
+- CREATE TABLE employee (id INT PRIMARY KEY, first_name VARCHAR(255), last_name VARCHAR(255), age INT, mobile_number BIGINT, address VARCHAR(255));
+- CREATE TABLE employee_salary (id INT PRIMARY KEY, fk_employee_id INT, salary INT, date DATE, FOREIGN KEY (fk_employee_id) REFERENCES employee(id));
+- CREATE TABLE employee_hobby (id INT PRIMARY KEY, fk_employee_id INT, fk_hobby_id Int, FOREIGN KEY (fk_employee_id) REFERENCES employee(id), FOREIGN KEY (fk_hobby_id) REFERENCES hobby(id));
 
 Adding Values into Table hobby :
 
@@ -18,3 +18,82 @@ Adding Values into Table hobby :
 - INSERT INTO hobby (id,hobby) VALUES (4,"Meditation");
 - INSERT INTO hobby (id,hobby) VALUES (5,"Watching Movie");
 - INSERT INTO hobby (id,hobby) VALUES (6,"Sport");
+
+Adding Values into Table employee :
+
+- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (1,"Mitul","Dobariya",20,1547569825,"Visavadar");
+- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (2,"Rahul","Dave",22,7547565845,"Junagadh");
+- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (3,"Hinax","Hathila",27,8452565865,"Junagadh");
+- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (4,"Kishan","Vasoya",24,7562565253,"Junagadh");
+- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (5,"Kishan","Ramoliys",22,8752565986,"Junagadh");
+- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (6,"Ramesh","Mori",29,7752565693,"Junagadh");
+
+Adding Values into Table employee_salary :
+
+- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (1,2,20000,'2023-01-02');
+- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (2,1,28000,'2022-12-30');
+- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (2,5,50000,'2022-12-29');
+- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (2,4,55000,'2023-01-01');
+- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (2,3,30000,'2023-01-05');
+- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (2,6,25000,'2023-01-05');
+
+Adding Values into Table employee_hobby :
+
+- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (1,4,2);
+- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (2,2,6);
+- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (3,5,4);
+- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (4,1,3);
+- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (5,3,5);
+- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (6,6,1);
+
+Updating Values into Table hobby :
+
+- UPDATE hobby SET hobby = 'Football' WHERE id = 6;
+- UPDATE hobby SET hobby = 'Longdrive' WHERE id = 5; 
+
+Updating Values into Table employee : 
+
+- UPDATE employee SET address = 'Mendarda', first_name = 'Ankit', last_name = 'Trivedi', age = 30, mobile_number = 7405236458  WHERE id = 3;
+- UPDATE employee SET address = 'Keshod', first_name = 'Mehul', last_name = 'Gohel', age = 35, mobile_number = 8805236253  WHERE id = 4; 
+- UPDATE employee SET address = 'Dhoraji', first_name = 'Kushi', last_name = 'Mavani', age = 22, mobile_number = 6985265789  WHERE id = 5;
+- UPDATE employee SET address = 'Surat', first_name = 'Shani', last_name = 'Rudani', age = 28, mobile_number = 3567435198  WHERE id = 6;
+
+Updating Values into Table employee_salary :
+
+- UPDATE employee_salary SET salary = 35000, date = '2023-01-10'  WHERE id = 3;
+- UPDATE employee_salary SET salary = 70000, date = '2024-05-01', fk_employee_id = 1  WHERE id = 6;
+- UPDATE employee_salary SET salary = 60000, date = '2023-05-15', fk_employee_id = 6  WHERE id = 2;
+
+Updating Values into Table employee_hobby :
+
+- UPDATE employee_hobby SET fk_employee_id = 4, fk_hobby_id = 3 WHERE id = 3;
+- UPDATE employee_hobby SET fk_employee_id = 5, fk_hobby_id = 1 WHERE id = 1;
+- UPDATE employee_hobby SET fk_employee_id = 3, fk_hobby_id = 2 WHERE id = 5;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
