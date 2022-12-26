@@ -7,7 +7,7 @@
 
 - CREATE TABLE hobby (id INT PRIMARY KEY,hobby VARCHAR(15));
 - CREATE TABLE employee (id INT PRIMARY KEY, first_name VARCHAR(30), last_name VARCHAR(30), age INT, mobile_number VARCHAR(17), address VARCHAR(255));
-- CREATE TABLE employee_salary (id INT PRIMARY KEY, fk_employee_id INT, salary INT, date DATE, FOREIGN KEY (fk_employee_id) REFERENCES employee(id));
+- CREATE TABLE employee_salary (id INT PRIMARY KEY, fk_employee_id INT, salary DOUBLE, date DATE, FOREIGN KEY (fk_employee_id) REFERENCES employee(id));
 - CREATE TABLE employee_hobby (id INT PRIMARY KEY, fk_employee_id INT, fk_hobby_id Int, FOREIGN KEY (fk_employee_id) REFERENCES employee(id), FOREIGN KEY (fk_hobby_id) REFERENCES hobby(id));
 
 >> Adding Values into Table hobby :
@@ -92,10 +92,11 @@
 
 >> Create a select query to get  employee name, his/her employee_salary :
 
-- SELECT CONCAT(e.first_name,' ',e.last_name) AS full_name, es.salary FROM (employee as e INNER JOIN employee_salary as es ON e.id = es.fk_employee_id);
+- SELECT CONCAT(e.first_name,' ',e.last_name) AS full_name, es.salary FROM (employee as e INNER JOIN employee_salary AS es ON e.id = es.fk_employee_id);
 
+>> Create a select query to get employee name, total salary of employee, hobby name(comma-separated - you need to use subquery for hobby name) :
 
-
+- SELECT CONCAT(e.first_name,' ',e.last_name) AS full_name, SUM(es.salary) AS 'Total salary',(SELECT GROUP_CONCAT(h.hobby) FROM hobby h INNER JOIN employee_hobby eh ON h.id = eh.fk_hobby_id where e.id = eh.fk_employee_id) AS hobby FROM employee e INNER JOIN employee_salary es ON e.id=es.fk_employee_id GROUP BY e.id;
 
 
 
