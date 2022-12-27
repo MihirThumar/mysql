@@ -5,46 +5,46 @@
 
 >> Creating Table :
 
-- CREATE TABLE hobby (id INT PRIMARY KEY,hobby VARCHAR(15));
+- CREATE TABLE hobby (id INT PRIMARY KEY, hobby VARCHAR(15));
 - CREATE TABLE employee (id INT PRIMARY KEY, first_name VARCHAR(30), last_name VARCHAR(30), age INT, mobile_number VARCHAR(17), address VARCHAR(255));
 - CREATE TABLE employee_salary (id INT PRIMARY KEY, fk_employee_id INT, salary DOUBLE, date DATE, FOREIGN KEY (fk_employee_id) REFERENCES employee(id));
 - CREATE TABLE employee_hobby (id INT PRIMARY KEY, fk_employee_id INT, fk_hobby_id Int, FOREIGN KEY (fk_employee_id) REFERENCES employee(id), FOREIGN KEY (fk_hobby_id) REFERENCES hobby(id));
 
 >> Adding Values into Table hobby :
 
-- INSERT INTO hobby (id,hobby) VALUES (1,"Trekking");
-- INSERT INTO hobby (id,hobby) VALUES (2,"Music");
-- INSERT INTO hobby (id,hobby) VALUES (3,"Gamming");
-- INSERT INTO hobby (id,hobby) VALUES (4,"Meditation");
-- INSERT INTO hobby (id,hobby) VALUES (5,"Watching Movie");
-- INSERT INTO hobby (id,hobby) VALUES (6,"Sport");
+- INSERT INTO hobby (id,hobby) VALUES (1, "Trekking");
+- INSERT INTO hobby (id,hobby) VALUES (2, "Music");
+- INSERT INTO hobby (id,hobby) VALUES (3, "Gamming");
+- INSERT INTO hobby (id,hobby) VALUES (4, "Meditation");
+- INSERT INTO hobby (id,hobby) VALUES (5, "Watching Movie");
+- INSERT INTO hobby (id,hobby) VALUES (6, "Sport");
 
 >> Adding Values into Table employee :
 
-- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (1,"Mitul","Dobariya",20,1547569825,"Visavadar");
-- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (2,"Rahul","Dave",22,7547565845,"Junagadh");
-- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (3,"Hinax","Hathila",27,8452565865,"Rajkot");
-- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (4,"Kishan","Vasoya",24,7562565253,"Mumbai");
-- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (5,"Kishan","Ramoliys",22,8752565986,"Udaypur");
-- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (6,"Ramesh","Mori",29,7752565693,"Gotta");
+- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (1, "Mitul", "Dobariya", 20, 1547569825, "Visavadar");
+- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (2, "Rahul", "Dave", 22, 7547565845, "Junagadh");
+- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (3, "Hinax", "Hathila", 27, 8452565865,"Rajkot");
+- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (4, "Kishan", "Vasoya", 24, 7562565253,"Mumbai");
+- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (5, "Kishan", "Ramoliys", 22, 8752565986,"Udaypur");
+- INSERT INTO employee (id, first_name, last_name, age, mobile_number, address) values (6, "Ramesh", "Mori", 29, 7752565693, "Gotta");
 
 >> Adding Values into Table employee_salary :
 
-- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (1,2,20000,'2023-01-02');
-- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (2,1,28000,'2022-12-30');
-- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (3,5,50000,'2022-12-29');
-- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (4,4,55000,'2023-01-01');
-- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (5,3,30000,'2023-01-05');
-- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (6,6,25000,'2023-01-05');
+- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (1, 2, 20000, '2023-01-02');
+- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (2, 1, 28000, '2022-12-30');
+- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (3, 5, 50000, '2022-12-29');
+- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (4, 4, 55000, '2023-01-01');
+- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (5, 3, 30000, '2023-01-05');
+- INSERT INTO employee_salary (id, fk_employee_id, salary, date) values (6, 6, 25000, '2023-01-05');
 
 >> Adding Values into Table employee_hobby :
 
-- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (1,4,2);
-- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (2,2,6);
-- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (3,5,4);
-- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (4,1,3);
-- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (5,3,5);
-- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (6,6,1);
+- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (1, 4, 2);
+- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (2, 2, 6);
+- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (3, 5, 4);
+- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (4, 1, 3);
+- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (5, 3, 5);
+- INSERT INTO employee_hobby (id, fk_employee_id, fk_hobby_id) VALUES (6, 6, 1);
 
 >> Updating Values into Table hobby :
 
@@ -74,10 +74,10 @@
 
 - TRUNCATE TABLE employee_hobby;
 - TRUNCATE TABLE employee_salary;
-- SET FOREIGN_KEY_CHECKS=0; (for delete the data of hobby and employee tables)
+- SET FOREIGN_KEY_CHECKS = 0; (for delete the data of hobby and employee tables)
 - TRUNCATE TABLE hobby;
 - TRUNCATE TABLE EMPLOYEE;
-- SET FOREIGN_KEY_CHECKS=1;
+- SET FOREIGN_KEY_CHECKS = 1;
 
 >> Create a separate select queries to get a hobby, employee, employee_salary, employee_hobby :
 
@@ -88,15 +88,15 @@
 
 >> Create a select single query to get all employee name, all hobby_name in single column :
 
-- SELECT CONCAT(e.first_name," ",e.last_name) AS name from employee AS e UNION SELECT h.hobby from hobby AS h;
+- SELECT CONCAT(e.first_name, " ", e.last_name) AS name from employee AS e UNION SELECT h.hobby from hobby AS h;
 
 >> Create a select query to get  employee name, his/her employee_salary :
 
-- SELECT CONCAT(e.first_name,' ',e.last_name) AS full_name, es.salary FROM (employee as e INNER JOIN employee_salary AS es ON e.id = es.fk_employee_id);
+- SELECT CONCAT(e.first_name, ' ', e.last_name) AS full_name, es.salary FROM (employee as e INNER JOIN employee_salary AS es ON e.id = es.fk_employee_id);
 
 >> Create a select query to get employee name, total salary of employee, hobby name(comma-separated - you need to use subquery for hobby name) :
 
-- SELECT CONCAT(e.first_name,' ',e.last_name) AS full_name, SUM(es.salary) AS 'Total salary',(SELECT GROUP_CONCAT(h.hobby) FROM hobby h INNER JOIN employee_hobby eh ON h.id = eh.fk_hobby_id where e.id = eh.fk_employee_id) AS hobby FROM employee e INNER JOIN employee_salary es ON e.id=es.fk_employee_id GROUP BY e.id;
+- SELECT CONCAT(e.first_name, ' ', e.last_name) AS full_name, SUM(es.salary) AS 'Total salary', (SELECT GROUP_CONCAT(h.hobby) FROM hobby h INNER JOIN employee_hobby eh ON h.id = eh.fk_hobby_id where e.id = eh.fk_employee_id) AS hobby FROM employee e INNER JOIN employee_salary es ON e.id = es.fk_employee_id GROUP BY e.id;
 
 
 
